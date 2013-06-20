@@ -1,16 +1,5 @@
 <?php
-$connection=mysql_connect("localhost","root","");
-if(!$connection){
-	die("db connectin failed:".mysql_error());
-
-}
-//select database
-
-$db_select=mysql_select_db('hackathon_2',$connection);
-if(!$db_select){
-	die("db connectin failed:".mysql_error());
-
-}
+require_once 'include/db_connect.php';
 
 ?>
 
@@ -24,10 +13,10 @@ if(!$db_select){
 		<link rel="stylesheet" href="css/leaflet.css" />
 		<link rel="stylesheet" href="css/foundation.css" />
 		<style type="text/css">
-		
+
 		</style>
 	</head>
-	<body> 
+	<body>
 		<div class="row">
     	<center>
         	<img src="img/banner960.png" />
@@ -40,14 +29,14 @@ if(!$db_select){
         <li><a href="index.php" class="button">Home</a></li>
         <li><a href="sms.php" class="button">SMS Inquiry</a></li>
         <li><a href="dr_index.php" class="button">Incidents</a></li>
-        <li><a href="form.php" class="button">Complaints</a></li>  
+        <li><a href="form.php" class="button">Complaints</a></li>
       </ul>
     </div>
     <!-- End Header and Nav -->
     <div class="row">
     	<div class="large-12 columns">
 
-			<form name="registerform"  method="POST" action="insert.php" class="large-12 columns"> 
+			<form name="registerform"  method="POST" action="insert.php" class="large-12 columns">
 				<legend><h3>COMPLAIN REGISTERATION FORM:</h3></legend>
 			<fieldset>
 			<table style="width:600px">
@@ -62,25 +51,25 @@ if(!$db_select){
 			<tr><td>Age:</td><td><input type="number" name="age"></td></tr>
 
 			<tr><td>Sex:</td><td><input type="radio" name="sex" value:"male">Male
-				<input type="radio" name="sex" value:"female">Female</td>	</tr>	
+				<input type="radio" name="sex" value:"female">Female</td>	</tr>
 
 			<tr><td>Occupation:</td><td><input type="text" name="occ" ></td></tr>
 			<tr><td>Email:</td><td><input type="email" name="email" ></td></tr>
 			<tr><td>Contact No:</td><td><input type="number" name="tel" ></td></tr>
 			</table>
 		</fieldset>
-			
+
 			<legend><h3>Address:</h3></legend>	<fieldset>
 			<table style="width:600px">
 
 			<tr><td>District:</td> <td><input type="text" name="dist"></td></tr>
-			
+
 			<tr><td>VDC:</td><td><input type="text" name="vdc"></td></tr>
-			
+
 			<tr><td>Municipality:</td><td><input type="text" name="mun"></td></tr>
-			
+
 			<tr><td>SubMetropolitan:</td><td><input type="text" name="submetro"></td></tr>
-			
+
 			<tr><td>Metropolitan:</td><td><input type="text" name="metro"></td></tr>
 		</table>
 		</fieldset>
@@ -143,4 +132,4 @@ if(!$db_select){
 	      </div>
 	    </footer>
 	</body>
-</html>	
+</html>

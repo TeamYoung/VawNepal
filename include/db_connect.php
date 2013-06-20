@@ -1,8 +1,8 @@
 <?php
 	$host = "localhost";
-	$db_name = "hackathon_2";
+	$db_name = "vawnepal_db";
 	$username = "root";
-	$password = "";
+	$password = "toor";
 
 	try {
 		$con = new PDO("mysql:host={$host};dbname={$db_name}", $username, $password);
